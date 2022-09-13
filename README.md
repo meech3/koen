@@ -24,13 +24,15 @@ npm install -g koen
 
 `[exec]`: Command to be executed on file change. Defaults to your start script.
 
-Basic usage:
+#### Examples
+
+Restart a server when any file in the working directory changes:
 
 ```
 koen
 ```
 
-Advanced usage:
+Run a build command when src files change, ignoring the dist folder:
 
 ```
 koen src --exclude "^dist" --exec "npm run build"
