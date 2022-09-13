@@ -47,10 +47,10 @@ watch(dir, { recursive: true }, (_, filename) => {
 });
 
 export function getDir(args: string[]): string {
-  if (args[0].startsWith("--")) {
+  if (!args[0] || args[0].startsWith("--")) {
     args.unshift(resolve("."));
   }
-  return args[0];
+  return resolve(args[0]);
 }
 
 export function parseOpts(opts: string[]): Options {
