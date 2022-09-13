@@ -1,6 +1,6 @@
 {
   "name": "koen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero-dependency, minimal replacement for common nodemon use cases.",
   "main": "dist/index.js",
   "type": "module",
