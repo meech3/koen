@@ -33,5 +33,5 @@ koen
 Advanced usage:
 
 ```
-koen src --include "^[^.]+.ts$" --exec "npx tsc"
+koen src --exclude "^dist" --exec "npm run build"
 ```
