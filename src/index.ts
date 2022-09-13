@@ -47,14 +47,14 @@ watch(dir, { recursive: true }, (_, filename) => {
   restart();
 });
 
-export function getDir(args: string[]): string {
+function getDir(args: string[]): string {
   if (!args[0] || args[0].startsWith("--")) {
     args.unshift(resolve("."));
   }
   return resolve(args[0]);
 }
 
-export function parseOpts(opts: string[]): Options {
+function parseOpts(opts: string[]): Options {
   return opts.reduce((acc: Options, curr, i) => {
     if (!curr.startsWith("--")) return acc;
 
@@ -70,7 +70,7 @@ export function parseOpts(opts: string[]): Options {
   }, {});
 }
 
-export function getStartScript(): string[] {
+function getStartScript(): string[] {
   const packageJSON = JSON.parse(readFileSync(join(String(process.env.PWD), "package.json"), "utf-8"));
 
   if (!packageJSON.scripts.start) {
@@ -81,7 +81,7 @@ export function getStartScript(): string[] {
   return packageJSON.scripts.start.split(" ");
 }
 
-export function restart(): void {
+function restart(): void {
   if (opts.exec) {
     const execArgs = opts.exec.split(" ");
     spawn(execArgs[0], execArgs.slice(1), { stdio: "inherit" });
