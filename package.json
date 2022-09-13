@@ -5,10 +5,12 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
+    "start": "node server.js",
     "build": "rm -rf dist && npx tsc && chmod +x dist/index.js",
     "check": "npx prettier --check . '!dist'",
     "write": "npx prettier --write . '!dist'"
   },
+  "bin": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/meech3/koen.git"
@@ -28,7 +30,7 @@
   },
   "homepage": "https://github.com/meech3/koen#readme",
   "devDependencies": {
-    "@types/node": "^18.7.16",
+    "@types/node": "^18.7.17",
     "typescript": "^4.8.3"
   }
 }
