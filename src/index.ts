@@ -38,7 +38,8 @@ watch(dir, { recursive: true }, (_, filename) => {
   if (opts.include) {
     const regex = new RegExp(opts.include);
     if (!filename.match(regex)) return;
-  } else if (opts.exclude) {
+  }
+  if (opts.exclude) {
     const regex = new RegExp(opts.exclude);
     if (filename.match(regex)) return;
   }
