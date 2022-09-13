@@ -8,7 +8,8 @@
     "start": "node test/server.js",
     "build": "rm -rf dist && npx tsc && chmod +x dist/index.js",
     "check": "npx prettier --check . '!dist'",
-    "write": "npx prettier --write . '!dist'"
+    "write": "npx prettier --write . '!dist'",
+    "prepublishOnly": "npm run write && npm run build"
   },
   "bin": "./dist/index.js",
   "repository": {
