@@ -89,6 +89,6 @@ export function restart(): void {
     child.kill();
     setTimeout(() => {
       child = spawn(command[0], command.slice(1), { stdio: "inherit" });
-    }, 100);
+    }, 500);
   }
 }
