@@ -20,7 +20,7 @@ npm install -g koen
 
 `[include]`: Regex expression defining which files should be included.
 
-`[exclude]`: Regex expression defining which files should be excluded.
+`[exclude]`: Regex expression defining which files should be excluded. Overwrites include.
 
 `[exec]`: Command to be executed on file change. Defaults to your start script.
 
